@@ -10,6 +10,7 @@ const account1 = {
   movements: [200, 450, -400, 3000, -650, -130, 70, 1300],
   interestRate: 1.2, // %
   pin: 1111,
+  type: 'premium',
 };
 
 const account2 = {
@@ -17,6 +18,7 @@ const account2 = {
   movements: [5000, 3400, -150, -790, -3210, -1000, 8500, -30],
   interestRate: 1.5,
   pin: 2222,
+  type: 'basic',
 };
 
 const account3 = {
@@ -24,6 +26,7 @@ const account3 = {
   movements: [200, -200, 340, -300, -20, 50, 400, -460],
   interestRate: 0.7,
   pin: 3333,
+  type: 'premium',
 };
 
 const account4 = {
@@ -31,6 +34,7 @@ const account4 = {
   movements: [430, 1000, 700, 50, 90],
   interestRate: 1,
   pin: 4444,
+  type: 'standard',
 };
 
 const accounts = [account1, account2, account3, account4];
@@ -169,7 +173,6 @@ btnLogin.addEventListener('click', function (e) {
     updateUI(currentAccount);
   }
 });
-
 // transfer the amount from one acc to another
 
 btnTransfer.addEventListener('click', function (e) {
@@ -380,16 +383,52 @@ const movements = [200, 450, -400, 3000, -650, -130, 70, 1300];
 //sorting
 
 //ascending
-movements.sort((a, b) => {
-  if (a > b) return 1;
-  if (a < b) return -1;
-});
+// movements.sort((a, b) => {
+//   if (a > b) return 1;
+//   if (a < b) return -1;
+// });
 
-console.log(movements);
+// console.log(movements);
 
-//descending
-movements.sort((a, b) => {
-  if (a > b) return -1;
-  if (a < b) return 1;
-});
-console.log(movements);
+// //descending
+// movements.sort((a, b) => {
+//   if (a > b) return -1;
+//   if (a < b) return 1;
+// });
+// console.log(movements);
+
+// array grouping
+// console.log(movements);
+
+// const groupingarray = Object.groupBy(movements, movement =>
+//   movement > 0 ? 'deposite' : 'withdrawl'
+// );
+
+// console.log(groupingarray);
+
+// const groupbyactivity = Object.groupBy(accounts, account => {
+//   const movementcount = account.movements.length;
+
+//   if (movementcount >= 8) return 'very active';
+//   if (movementcount >= 4) return 'active';
+//   if (movementcount >= 1) return 'moderate';
+// });
+
+// console.log(groupbyactivity);
+
+// const groupaccount = Object.groupBy(accounts, account => account.type);
+
+// console.log(groupaccount);
+
+// //forming array
+
+// const arr = Array.from({ length: 7 }, (curr, i) => i + 1);
+// console.log(arr);
+
+// labelBalance.addEventListener('click', function () {
+//   const movementUI = Array.from(
+//     document.querySelectorAll('.movements__value'),
+//     el => el.textContent.replace('€', '')
+//   );
+//   console.log(movementUI);
+// });
